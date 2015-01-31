@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>RPS Game v1</title>
+</head>
+
+<body bgcolor="#000">
+	<canvas id="canvas"></canvas>
+
+	<script src="logic.js"></script>
+	<script src="gamePacket.js"></script>
+	<script src="ui.js"></script>
+	<script src="gameui.js"></script>
+	<script src="draw.js"></script> <!-- generic drawing -->
+	<script src="lobbyPacket.js"></script> <!-- LOBBY: packet handlers -->
+	<script src="lobby.js"></script> <!-- LOBBY: drawing, button handlers, lobby tick -->
+	<script src="render.js"></script> <!-- STARTUP CODE AT BOTTOM, update-render mainfunc -->
+	<script src="input.js"></script>
+
+	<script>
+	function alphaOnly(event)
+	{
+		var key = event.keyCode;
+		return ((key >= 65 && key <= 90) || key == 8);
+	};
+	</script>
+	<form>
+	<input type="text" id="nameInput" value = "a" style="z-index:101; position:absolute; font:30px arial;"
+		pattern="[A-Za-z]{3}" maxlength = "12" onkeydown="return alphaOnly(event);">
+	<input type="checkbox" id="soundCheckbox" value="b" checked>
+	<font color="white">Sound On</font>
+	</form>
+
+	<font color="#AAAAAA">When your streak is 3 or higher, your damage is doubled. QWE are hotkeys for selecting throws.</font>
+
+</body>
+</html>
